@@ -13,8 +13,8 @@ development:
   encoding: utf8
   database: TwitterMock_development
   pool: 5
-  username: root
-  password:
+  username: rails
+  password: branding
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -25,8 +25,8 @@ test:
   encoding: utf8
   database: TwitterMock_test
   pool: 5
-  username: root
-  password:
+  username: rails_test
+  password: branding
   host: localhost
 
 production:
@@ -34,6 +34,6 @@ production:
   encoding: utf8
   database: TwitterMock_production
   pool: 5
-  username: root
-  password:
+  username: rails
+  password: branding
   host: localhost
