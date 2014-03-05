@@ -1,0 +1,18 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/say/BrandingEngineer/Rails/TwitterMock/app/models/bweet.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/say/BrandingEngineer/Rails/TwitterMock/app/models/user.rb": [
+        1,
+        1,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1394035359
+  }
+}
