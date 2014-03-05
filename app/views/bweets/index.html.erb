@@ -1,0 +1,39 @@
+<div id='wrap'>
+  <div id='header'>
+    <% if flash[:notice] %>
+      <p class='notice'><%= flash[:notice] %></p>
+    <% end %>
+  </div><!-- /header -->
+  <div id='innner'>
+    <div id='mainWrap'>
+      <h1>Bweets</h1>
+      <% @bweets.each do |bweet| %>
+        <div class='bweet'>
+          <fieldset>
+            <legend><%= bweet.user.name %></legend>
+            <p><%= bweet.description %></p>
+          </fieldset>
+        </div>
+      <% end %>
+      <%= form_tag('/bweets#index') do %>
+        <div>
+          <%= submit_tag 'More 10 Bweets' %>
+        </div>
+      <% end %>
+    </div><!-- /mainWrap -->
+    <div id='sideWrap'>
+      <% if session[:user_id].nil? %>
+        <%= render 'sessions/form' %>
+        <%= link_to 'Sign up', new_user_path %>
+      <% else %>
+        <h4>UserName</h4>
+        <%= @user.name %><br>
+        <%= link_to 'Sign out', sessions_destroy_path %>
+        <%= render 'bweets/form' %>
+      <% end %>
+    </div><!-- /sideWrap -->
+  </div>
+  <div id='footer'>
+    
+  </div><!-- /footer -->
+</div><!-- /wrap -->

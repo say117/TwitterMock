@@ -1,0 +1,12 @@
+<%= form_tag('/bweets#create') do %>
+<fieldset>
+  <legend>Bweet</legend>
+  
+  <div>
+  <%= text_area_tag :description%>
+  </div>
+  <div>
+    <%= submit_tag 'Bweet' %>
+  </div>
+</fieldset>
+<% end %>
