@@ -4,7 +4,7 @@ class BweetsController < ApplicationController
     @user = User.find_by_id(session[:user_id])
     #session[:bweet_page] == nil ? session[:bweet_page] = 1 : session[:bweet_page] += 1
     #session[:bweet_page] = 1
-    @bweets = Bweet.order("created_at DESC").limit(session[:bweet_page].to_i * 10)
+    @bweets = Bweet.order("created_at DESC").limit(10)
   end
 
   def new
