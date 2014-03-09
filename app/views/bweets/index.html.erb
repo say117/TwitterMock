@@ -5,22 +5,7 @@
     <% end %>
   </div><!-- /header -->
   <div id='innner'>
-    <div id='mainWrap'>
-      <h1>Bweets</h1>
-      <% @bweets.each do |bweet| %>
-        <div class='bweet'>
-          <fieldset>
-            <legend><%= bweet.user.name %></legend>
-            <p><%= bweet.description %></p>
-          </fieldset>
-        </div>
-      <% end %>
-      <%= form_tag('/bweets#index') do %>
-        <div>
-          <%= submit_tag 'More 10 Bweets' %>
-        </div>
-      <% end %>
-    </div><!-- /mainWrap -->
+
     <div id='sideWrap'>
       <% if session[:user_id].nil? %>
         <%= render 'sessions/form' %>
@@ -32,7 +17,16 @@
         <%= render 'bweets/form' %>
       <% end %>
     </div><!-- /sideWrap -->
-  </div>
+    <div id='mainWrap'>
+      <h1>Bweets</h1>
+      <div id='bweet'>
+        <%= render partial: "bweets", collections: @bweets %>
+      </div>
+      <%= button_to 'More Show 10 Bweets' %>
+
+    </div><!-- /mainWrap -->
+  </div><!-- inner -->
+
   <div id='footer'>
     
   </div><!-- /footer -->

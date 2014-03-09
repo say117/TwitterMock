@@ -1,4 +1,4 @@
-<%= form_tag('/bweets#create') do %>
+<%= form_tag({action: 'create'}, {remote: true, format: :js}) do %>
 <fieldset>
   <legend>Bweet</legend>
   
@@ -6,7 +6,25 @@
   <%= text_area_tag :description%>
   </div>
   <div>
-    <%= submit_tag 'Bweet' %>
+    <%= submit_tag 'Bweet'%>
   </div>
 </fieldset>
 <% end %>
+
+<script>
+　　$("#bweet").click(function(){
+　　var data = new Object();
+　　data = {"title":"hogehgoe"};
+　　$.ajax({
+　　　　url:"check.php",
+　　　　data:data,
+　　　　type:"post",
+　　　　dataType:"json",
+　　　　success:function(data){
+　　　　　　alert(data);
+　　　　　　alert("データが届いています。\nコンソールを開きながら再度確認して下さい。")
+　　　　　　console.log(data);
+　　　　}
+　　});
+});
+</script>
