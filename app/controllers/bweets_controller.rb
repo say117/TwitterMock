@@ -2,11 +2,11 @@ class BweetsController < ApplicationController
   def index
     if request.xhr?
       session[:bweet_page] += 1
-      @bweets = Bweet.order("created_at DESC").limit(10).offset(10 * session[:bweet_page])
+      @bweets = Bweet.limit(10).offset(10 * session[:bweet_page])
       render partial: 'bweets', collections: @bweets
     else
       session[:bweet_page] = 0
-      @bweets = Bweet.order("created_at DESC").limit(10)
+      @bweets = Bweet.limit(10)
       @user = User.find_by_id(session[:user_id])
     end
   end
@@ -16,7 +16,7 @@ class BweetsController < ApplicationController
     @bweet.user_id = session[:user_id]
     respond_to do |format|
       if @bweet.save
-        @bweets = Bweet.order("created_at DESC").limit(10)
+        @bweets = Bweet.limit(10)
         format.html { render partial: 'bweets', collections: @bweets }
       else
         redirect_to root_url, notice: 'Submit Error!'

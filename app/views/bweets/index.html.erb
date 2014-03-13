@@ -25,21 +25,4 @@
     </div><!-- /mainWrap -->
   </div><!-- inner -->
   <div class="clear"></div>
-
-  <div id='footer'>
-  </div><!-- /footer -->
 </div><!-- /wrap -->
-
-<script>
-$("#more_show").click(function(){
-  $.ajax({
-    url: "/",
-    type: "get",
-    dataType: "html"
-  }).done(function(data, status, xhr) {
-    data == "" ? alert("Bweetは全て表示されました。") : $("#bweets").append(data);
-  }).fail(function(data, status, xhr) {
-    alert("error!");
-  });
-});
-</script>
