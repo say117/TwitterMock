@@ -1,9 +1,7 @@
-        <% @bweets.each do |bweet| %>
-          <div class='bweet'>
-            <fieldset>
-              <legend><%= bweet.user.name %></legend>
-              <p><%= bweet.description %></p>
-              <h6><%= bweet.created_at %></h6>
-            </fieldset>
-          </div>
-        <% end %>
+<% @bweets.each do |bweet| %>
+  <fieldset>
+    <legend><h2><%= bweet.user.name %></h2></legend>
+    <p><%= bweet.description %></p>
+    <h6><%= bweet.created_at %></h6>
+  </fieldset>
+<% end %>

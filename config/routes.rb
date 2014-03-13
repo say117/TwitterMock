@@ -5,6 +5,7 @@ TwitterMock::Application.routes.draw do
   root :to => 'bweets#index'
   resources :users, only: [:new, :create]
   resources :bweets, only: [:index, :create]
+  post "bweets/create"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

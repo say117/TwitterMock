@@ -1,10 +1,19 @@
-<fieldset>
-  <legend>Bweet</legend>
-<textarea id="bweet_description"></textarea><br>
-<button type="submit" id="bweet_button">Bweet</button>
-</fieldset>
+//more show ajax
+$("#more_show").click(function(){
+  $.ajax({
+    url: "/",
+    type: "get",
+    dataType: "html"
+  }).done(function(data, status, xhr) {
+    $("#bweets").append(data);
+    alert(status);
+    console.log(status);
+  }).fail(function(data, status, xhr) {
+    alert("error!");
+  });
+});
 
-<script>
+//bweet ajax
 $("#bweet_button").click(function(){
   var data = {"description": $("#bweet_description").val()};
   $.ajax({
@@ -20,4 +29,3 @@ $("#bweet_button").click(function(){
     alert("error!");
   });
 });
-</script>
