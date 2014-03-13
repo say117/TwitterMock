@@ -1,6 +1,11 @@
 <% @bweets.each do |bweet| %>
   <fieldset>
-    <legend><h2><%= bweet.user.name %></h2></legend>
+    <legend>
+      <h2>
+        <%= image_tag("/icons/#{bweet.user_id}.jpg", alt: :icon, size: "24x24") %>
+        <%= bweet.user.name %>
+      </h2>
+    </legend>
     <p><%= bweet.description %></p>
     <h6><%= bweet.created_at %></h6>
   </fieldset>
