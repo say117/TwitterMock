@@ -5,7 +5,9 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(user_params)
-    if @user.save  
+    icon = params[:user][:icon]
+    File.open("./public/icons/#{@user.name}.jpg", "wb") { |f| f.write(icon.read) }
+    if @user.save
       redirect_to root_url, notice: "Your account is created!"  
     else  
       render "new"

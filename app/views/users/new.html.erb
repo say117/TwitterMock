@@ -28,6 +28,10 @@
       <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation, size: 20 %>
       </div>
+      <div>
+      <%= f.label :icon %>
+      <%= f.file_field :icon %>
+      </div>
       <%= f.submit %>
     </fieldset>
   <% end %>
